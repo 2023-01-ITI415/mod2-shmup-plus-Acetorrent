@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Main : MonoBehaviour {
 
+    public HeroLevel player;
     static public Main S; // A singleton for Main
     static Dictionary<eWeaponType, WeaponDefinition> WEAP_DICT;
 
@@ -48,10 +50,12 @@ public class Main : MonoBehaviour {
             // Set it to the position of the destroyed ship
             pu.transform.position = e.transform.position;
         }
+
     }
 
     private void Awake()
     {
+        player = FindObjectOfType<HeroLevel>();
         S = this;
         // Set bndCheck to reference the BoundsCheck component on this GameObject
         bndCheck = GetComponent<BoundsCheck>();

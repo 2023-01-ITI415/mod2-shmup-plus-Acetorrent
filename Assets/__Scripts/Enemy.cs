@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoundsCheck))]
 public class Enemy : MonoBehaviour
 {
+    public HeroLevel player;
 
     [Header("Inscribed: Enemy")]
     public float speed = 10f; // The speed in m/s
@@ -39,6 +40,9 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
+
+        player = FindObjectOfType<HeroLevel>();
+
         bndCheck = GetComponent<BoundsCheck>();
         // Get materials and colors for this GameObject and its children
         materials = Utils.GetAllMaterials(gameObject);
@@ -48,6 +52,8 @@ public class Enemy : MonoBehaviour
             originalColors[i] = materials[i].color;
         }
     }
+
+
 
 
 
@@ -62,6 +68,8 @@ public class Enemy : MonoBehaviour
         }
 
     }
+
+
 
     public virtual void Move()
     {
@@ -86,12 +94,14 @@ public class Enemy : MonoBehaviour
                 health -= Main.GET_WEAPON_DEFINITION(p.type).damageOnHit;
                 if (health <= 0)
                 {
+                    player.exp_Gain(score);
                     if (!calledShipDestroyed)
                     {
                         calledShipDestroyed = true;
                         Main.SHIP_DESTROYED(this);
                     }
                     Destroy(this.gameObject);
+                    
                 }
             }
             // Destroy the projectile regardless
@@ -103,4 +113,5 @@ public class Enemy : MonoBehaviour
             print("Enemy hit by non-ProjectileHero: " + otherGO.name);
         }
     }
+
 }

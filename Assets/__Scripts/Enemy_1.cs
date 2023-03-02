@@ -13,17 +13,21 @@ public class Enemy_1 : Enemy {
     [Tooltip("Amount the ship will Roll left and right with sine wave")]
     public float waveRotY = 45;
 
+
     private float x0; // The initial x value of pos
     private float birthTime;
 
 	// Use this for initialization
 	void Start()
     {
+
         // Set x0 to the initial x position of Enemy_1
         x0 = pos.x;
 
         birthTime = Time.time;
     }
+
+
 
     // Override the Move function on Enemy
     public override void Move()
@@ -46,3 +50,5 @@ public class Enemy_1 : Enemy {
         // print (bndCheck.isOnScreen);
     }
 }
+
+
