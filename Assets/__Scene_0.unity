@@ -531,7 +531,7 @@ MonoBehaviour:
   - {fileID: 9185519998980853174, guid: 486b535a9aae8446f9346d286631b31d, type: 3}
   enemySpawnPerSecond: 1
   enemyInsetDefault: 1.5
-  gameRestartDelay: 2
+  gameRestartDelay: 1
   weaponDefinitions:
   - type: 1
     letter: B
@@ -549,10 +549,10 @@ MonoBehaviour:
     weaponModelPrefab: {fileID: 1899541879965282, guid: 59a4640edad59f94a87c1d235355cb6a,
       type: 3}
     projectileColor: {r: 0.007843138, g: 0.9607844, b: 0.9960785, a: 1}
-    damageOnHit: 5
+    damageOnHit: 15
     continuousDamage: 0
-    delayBetweenShots: 0.25
-    velocity: 50
+    delayBetweenShots: 0.6
+    velocity: 35
   - type: 6
     letter: 0
     color: {r: 0.08235294, g: 0.9725491, b: 0.019607844, a: 1}
@@ -1710,6 +1710,7 @@ MonoBehaviour:
   - {fileID: 1325660965}
   - {fileID: 1344960761}
   - {fileID: 1821739884}
+  level: {fileID: 0}
 --- !u!4 &1342965580
 Transform:
   m_ObjectHideFlags: 0
