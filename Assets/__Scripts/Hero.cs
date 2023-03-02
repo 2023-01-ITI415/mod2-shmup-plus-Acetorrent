@@ -70,7 +70,14 @@ public class Hero : MonoBehaviour {
         // Then ensure that fireDelegate isn't null to avoid an error
         if (Input.GetAxis("Jump") == 1 && fireEvent != null)
         {
+
             fireEvent();
+
+            if (weapons[0].type == eWeaponType.missile)
+
+            {
+                weapons[0].SetType(eWeaponType.blaster);
+            }
             //TempFire();
         }
     }
@@ -139,6 +146,10 @@ public class Hero : MonoBehaviour {
         pUp.AbsorbedBy(gameObject);
     }
 
+    public void set_Type(eWeaponType type)
+    {
+        weapons[0].SetType(type);
+    }
     public float shieldLevel
     {
         get

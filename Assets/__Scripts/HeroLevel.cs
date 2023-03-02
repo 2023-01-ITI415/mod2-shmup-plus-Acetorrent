@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class HeroLevel : MonoBehaviour
 {
+    public Hero hero;
     public int PlayerLevel = 1;
     public float maxExp;
     public float currentExp = 0f;
@@ -16,6 +17,7 @@ public class HeroLevel : MonoBehaviour
         maxExp = 500f;
         PlayerLevel = 1;
         currentExp = 0f;
+        hero = GetComponent<Hero>();
     }
 
     // Update is called once per frame
@@ -46,7 +48,9 @@ public class HeroLevel : MonoBehaviour
     public void level_Up()
     {
         PlayerLevel += 1;
-        maxExp = ((PlayerLevel)*.25f * maxExp) + maxExp; 
+        maxExp = ((PlayerLevel)*.25f * maxExp) + maxExp;
+        hero.set_Type(eWeaponType.missile);
+        
     }
     public float get_exp()
     {

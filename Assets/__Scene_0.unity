@@ -189,7 +189,7 @@ PrefabInstance:
     - target: {fileID: 3923796494938685823, guid: ae4feb5a0d0624529b1f5beb5cbea392,
         type: 3}
       propertyPath: _type
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8456642093769543252, guid: ae4feb5a0d0624529b1f5beb5cbea392,
         type: 3}
@@ -562,6 +562,16 @@ MonoBehaviour:
     continuousDamage: 0
     delayBetweenShots: 0
     velocity: 0
+  - type: 4
+    letter: M
+    color: {r: 1, g: 0.28525192, b: 0.25, a: 1}
+    weaponModelPrefab: {fileID: 1899541879965282, guid: 59a4640edad59f94a87c1d235355cb6a,
+      type: 3}
+    projectileColor: {r: 1, g: 0.46632248, b: 0.3254717, a: 1}
+    damageOnHit: 30
+    continuousDamage: 0
+    delayBetweenShots: 5
+    velocity: 10
   prefabPowerUp: {fileID: 1062273549804748, guid: 9649a9a79085a854d9990613a980f435,
     type: 3}
   powerUpFrequency: 01000000010000000200000006000000

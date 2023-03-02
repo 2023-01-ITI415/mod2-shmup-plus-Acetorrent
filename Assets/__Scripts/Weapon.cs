@@ -144,6 +144,71 @@ public class Weapon : MonoBehaviour
                 p.transform.rotation = Quaternion.AngleAxis(-10, Vector3.back);
                 p.vel = p.transform.rotation * vel;
                 break;
+            case eWeaponType.missile:
+                
+                p = MakeProjectile(); // Make middle Projectile
+                p.vel = vel;
+                p = MakeProjectile(); // Make right Projectile
+                p.transform.rotation = Quaternion.AngleAxis(10, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make left Projectile
+                p.transform.rotation = Quaternion.AngleAxis(-10, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make right Projectile
+                p.transform.rotation = Quaternion.AngleAxis(30, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make left Projectile
+                p.transform.rotation = Quaternion.AngleAxis(-30, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p.transform.rotation = Quaternion.AngleAxis(40, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make left Projectile
+                p.transform.rotation = Quaternion.AngleAxis(-40, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+
+                p = MakeProjectile(); // Make right Projectile
+                p.transform.rotation = Quaternion.AngleAxis(50, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make left Projectile
+                p.transform.rotation = Quaternion.AngleAxis(-50, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make right Projectile
+                p.transform.rotation = Quaternion.AngleAxis(160, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make left Projectile
+                p.transform.rotation = Quaternion.AngleAxis(-160, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p.transform.rotation = Quaternion.AngleAxis(70, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make left Projectile
+                p.transform.rotation = Quaternion.AngleAxis(-70, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+
+                p = MakeProjectile(); // Make right Projectile
+                p.transform.rotation = Quaternion.AngleAxis(140, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make left Projectile
+                p.transform.rotation = Quaternion.AngleAxis(-140, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make right Projectile
+                p.transform.rotation = Quaternion.AngleAxis(90, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make left Projectile
+                p.transform.rotation = Quaternion.AngleAxis(-90, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p.transform.rotation = Quaternion.AngleAxis(120, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make left Projectile
+                p.transform.rotation = Quaternion.AngleAxis(-120, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p.transform.rotation = Quaternion.AngleAxis(180, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+                p = MakeProjectile(); // Make left Projectile
+                p.transform.rotation = Quaternion.AngleAxis(-180, Vector3.back);
+                p.vel = p.transform.rotation * vel;
+
+
+                break;
         }
     }
 
