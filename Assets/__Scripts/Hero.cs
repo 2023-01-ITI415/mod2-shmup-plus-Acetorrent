@@ -7,13 +7,14 @@ public class Hero : MonoBehaviour {
 
     [Header("Inscribed")]
     // These fields control the movement of the ship
-    public float speed = 30;
+    public float speed;
     public float rollMult = -45;
     public float pitchMult = 30;
     public float gameRestartDelay = 2f;
     public GameObject projectilePrefab;
     public float projectileSpeed = 40;
     public Weapon[] weapons;
+    public HeroLevel level;
 
     [Header("Dynamic")] [Range(0,4)]
     
@@ -29,6 +30,8 @@ public class Hero : MonoBehaviour {
 
 	void Awake()
     {
+        level = FindObjectOfType<HeroLevel> ();
+        speed = 30f;
         if (S == null)
         {
             S = this; // Set the Singleton
@@ -47,6 +50,8 @@ public class Hero : MonoBehaviour {
 	// Update is called once per frame
 	void Update()
     {
+        int currentLevel = level.get_level();
+        speed = 30 + 5*(currentLevel-1);
         // Pull in information from the Input class
         float xAxis = Input.GetAxis("Horizontal");
         float yAxis = Input.GetAxis("Vertical");
